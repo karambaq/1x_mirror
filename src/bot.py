@@ -10,8 +10,6 @@ def get_current_mirror():
     Returns current available mirror of the 1xbet.com, 
     first try to redirects, if fails, try to use google
     """
-    REQUESTS_COUNT += 1
-    print(REQUESTS_COUNT)
     session = HTMLSession()
     url = 'http://1xstavka.ru'
     try:
@@ -32,8 +30,6 @@ def start(bot, update):
 
 
 def polling():
-    global REQUESTS_COUNT
-    REQUESTS_COUNT = 0
     updater = Updater(token=os.environ.get('TOKEN'))
     start_handler = CommandHandler('start', start) 
     updater.dispatcher.add_handler(start_handler) 
