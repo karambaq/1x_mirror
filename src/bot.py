@@ -5,7 +5,6 @@ from telegram.ext import CommandHandler
 
 from get_mirror import get_current_mirror
 
-REQUESTS_COUNT = 0
 
 def start(bot, update):
     REQUESTS_COUNT += 1
@@ -14,6 +13,7 @@ def start(bot, update):
 
 
 def polling():
+    REQUESTS_COUNT = 0
     updater = Updater(token=os.environ.get('TOKEN'))
     start_handler = CommandHandler('start', start) 
     updater.dispatcher.add_handler(start_handler) 
