@@ -1,3 +1,5 @@
+import os
+
 from telegram.ext import Updater
 from telegram.ext import CommandHandler
 
@@ -9,7 +11,7 @@ def start(bot, update):
 
 
 def polling():
-    updater = Updater(token='607298602:AAHmHXlRkNJ3rT2dPiij3Ah2hAy0gnu7M6w')
+    updater = Updater(token=os.environ.get('TOKEN'))
     start_handler = CommandHandler('start', start) 
     updater.dispatcher.add_handler(start_handler) 
     updater.start_polling() 
