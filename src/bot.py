@@ -8,8 +8,8 @@ from get_mirror import get_current_mirror
 
 def start(bot, update):
     bot.sendMessage(chat_id=update.message.chat_id, text=f"{get_current_mirror()}")
-    REQUESTS_COUNT += 1
     print('Sending mirror')
+    REQUESTS_COUNT += 1
     print(REQUESTS_COUNT)
 
 
