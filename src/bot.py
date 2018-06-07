@@ -14,7 +14,7 @@ def start(bot, update):
 
 def polling():
     REQUESTS_COUNT = 0
-    updater = Updater(token=os.environ.get('TOKEN'))
+    updater = Updater(token='607298602:AAHmHXlRkNJ3rT2dPiij3Ah2hAy0gnu7M6w')
     start_handler = CommandHandler('start', start) 
     updater.dispatcher.add_handler(start_handler) 
     updater.start_polling() 
