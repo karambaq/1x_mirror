@@ -7,7 +7,6 @@ from get_mirror import get_current_mirror
 
 
 def start(bot, update):
-    print(REQUESTS_COUNT)
     bot.sendMessage(chat_id=update.message.chat_id, text=f"{get_current_mirror()}")
 
 
