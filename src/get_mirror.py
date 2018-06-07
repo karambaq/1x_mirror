@@ -1,11 +1,12 @@
 from requests_html import HTMLSession
 
 
-def get_current_mirror():
+def get_current_mirror(REQUESTS_COUNT):
     """
     Returns current available mirror of the 1xbet.com, 
     first try to redirects, if fails, try to use google
     """
+    print(REQUESTS_COUNT)
     session = HTMLSession()
     url = 'http://1xstavka.ru'
     try:
